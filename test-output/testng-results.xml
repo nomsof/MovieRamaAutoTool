@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="28976" started-at="2016-08-19T05:40:38Z" finished-at="2016-08-19T05:41:07Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="28976" started-at="2016-08-19T05:40:38Z" finished-at="2016-08-19T05:41:07Z">
+      <class name="com.workable.movierama.tests.MovieRamaTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.workable.movierama.tests.MovieRamaTest@40e6dfe1]" name="init" is-config="true" duration-ms="4939" started-at="2016-08-19T08:40:38Z" finished-at="2016-08-19T08:40:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testMovieRama()[pri:0, instance:com.workable.movierama.tests.MovieRamaTest@40e6dfe1]" name="testMovieRama" duration-ms="19820" started-at="2016-08-19T08:40:43Z" finished-at="2016-08-19T08:41:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieRama -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.workable.movierama.tests.MovieRamaTest@40e6dfe1]" name="tearDown" is-config="true" duration-ms="4200" started-at="2016-08-19T08:41:03Z" finished-at="2016-08-19T08:41:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.workable.movierama.tests.MovieRamaTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
