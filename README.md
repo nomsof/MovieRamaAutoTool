@@ -1,12 +1,12 @@
 Introduction
 ------------------
-The scope of this project is the validation of functional requirements of a web app. This procedure developed using the followin:
+The scope of this project is the validation of functional requirements of a web app. This procedure developed using the following:
  1. java
  2. maven
  3. selenium
  4. testng
 
-The testing procedure divine in 4 different test cases:
+The testing procedure divided in 4 different test cases:
  1. A simple check-test about the way that the movies are present
  2. A test that checks the behavior of a search procedure in the page
  3. A navigation test that checks the navigation procedure in the page
@@ -39,7 +39,9 @@ Execution
 
 To run the automation tool the following command must be executed in the sourcefile of the project
 
-$ mvn clean install -p selenium
+```bash
+mvn clean install -p selenium
+```
 
 where selenium is the profile which : 
  1. downloads the chromedriver, which is required in order to run the selenium,
