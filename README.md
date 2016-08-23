@@ -1,16 +1,16 @@
 Introduction
 ------------------
 The scope of this project is the validation of functional requirements of a web app. This procedure was developed using the following:
- 1. java
- 2. maven
- 3. selenium
- 4. testng
+ * java
+ * maven
+ * selenium
+ * testng
 
-Testing procedure divided in 4 different test cases:
- 1. A simple check-test about the way that the movies are present
- 2. A test that checks the behavior of a search procedure in the page
- 3. A navigation test that checks the navigation procedure in the page
- 4. Finally, an end-to-end test that checks the whole functionality of the page
+Testing procedure divided in 4 different test cases that checks:
+ * The way movies are presented
+ * The behavior of a search procedure in the page
+ * The navigation procedure in the page
+ * An end-to-end test that checks the whole functionality of the page
 
 Tests-Description
 ------------------
