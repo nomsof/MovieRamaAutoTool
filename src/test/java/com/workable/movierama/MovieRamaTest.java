@@ -3,11 +3,8 @@ package com.workable.movierama;
 import java.awt.AWTException;
 import java.util.Random;
 
-import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.workable.movierama.controller.WebController;
@@ -16,15 +13,10 @@ import com.workable.movierama.session.SessionDriver;
 import com.workable.movierama.session.constants.BrowserConstants;
 import com.workable.movierama.session.constants.BrowserType;
 
-public class MovieRamaTest {
+public class MovieRamaTest extends AbstractMovieRamaTest {
     private static final Logger LOG = LoggerFactory.getLogger(MovieRamaTest.class);
 
-    private MainPage mainPage;
-    private WebDriver driver;
-    private WebController webController;
-    private SessionDriver sessionDriver;
-
-    @BeforeTest
+    @Override
     public void init() {
         sessionDriver = null;
         try {
@@ -57,16 +49,6 @@ public class MovieRamaTest {
         LOG.info("-------------------------------------------------------------------------");
     }
 
-    @AfterTest
-    public void tearDown() {
-        try {
-            Thread.sleep(BrowserConstants.SLEEP_TIME);
-        } catch (Exception e) {
-            LOG.error("Error in tearDown", e);
-        }
-        sessionDriver.quitWebDriver();
-    }
-
     private static String randomStringGenerator(int size) {
         char[] chars = "abcdefghijklmnopqrstuvwxyz0123456789_".toCharArray();
         StringBuilder sb = new StringBuilder();
@@ -76,6 +58,16 @@ public class MovieRamaTest {
             sb.append(c);
         }
         return sb.toString();
+    }
+
+    @Override
+    public void tearDown() {
+        try {
+            Thread.sleep(BrowserConstants.SLEEP_TIME);
+        } catch (Exception e) {
+            LOG.error("Error in tearDown", e);
+        }
+        sessionDriver.quitWebDriver();
     }
 
 }

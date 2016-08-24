@@ -1,12 +1,9 @@
 package com.workable.movierama;
 
 import java.awt.AWTException;
-import java.util.List;
 
-import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -18,16 +15,8 @@ import com.workable.movierama.session.constants.BrowserConstants;
 import com.workable.movierama.session.constants.BrowserType;
 import com.workable.movierama.util.ValidationUtils;
 
-public class MovieElementsTest {
+public class MovieElementsTest extends AbstractMovieRamaTest {
     private static final Logger LOG = LoggerFactory.getLogger(MovieElementsTest.class);
-
-    private MainPage mainPage;
-
-    private WebDriver driver;
-    private WebController webController;
-    private SessionDriver sessionDriver;
-
-    private List<Movie> initialMovies;
 
     @BeforeTest
     public void init() {
@@ -54,7 +43,7 @@ public class MovieElementsTest {
         LOG.info("-------------------------------------------------------------------------");
     }
 
-    @AfterTest
+    @Override
     public void tearDown() {
         try {
             Thread.sleep(BrowserConstants.SLEEP_TIME);
@@ -63,5 +52,4 @@ public class MovieElementsTest {
         }
         sessionDriver.quitWebDriver();
     }
-
 }

@@ -6,11 +6,8 @@ import static org.testng.AssertJUnit.fail;
 import java.awt.AWTException;
 import java.util.List;
 
-import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.workable.movierama.controller.WebController;
@@ -20,18 +17,12 @@ import com.workable.movierama.session.SessionDriver;
 import com.workable.movierama.session.constants.BrowserConstants;
 import com.workable.movierama.session.constants.BrowserType;
 
-public class PageNavigationTest {
+public class PageNavigationTest extends AbstractMovieRamaTest {
     private static final Logger LOG = LoggerFactory.getLogger(PageNavigationTest.class);
 
     private List<Movie> movies;
 
-    private MainPage mainPage;
-
-    private WebDriver driver;
-    private WebController webController;
-    private SessionDriver sessionDriver;
-
-    @BeforeTest
+    @Override
     public void init() {
         sessionDriver = null;
         try {
@@ -99,7 +90,7 @@ public class PageNavigationTest {
         Thread.sleep(BrowserConstants.SLEEP_TIME);
     }
 
-    @AfterTest
+    @Override
     public void tearDown() {
         try {
             Thread.sleep(BrowserConstants.SLEEP_TIME);
@@ -108,5 +99,4 @@ public class PageNavigationTest {
         }
         sessionDriver.quitWebDriver();
     }
-
 }
