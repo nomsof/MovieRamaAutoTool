@@ -1,7 +1,5 @@
 package com.workable.movierama.model.pages;
 
-import static com.workable.movierama.model.pages.MainPage.PREVIOUS_PAGE_BUTTON;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
