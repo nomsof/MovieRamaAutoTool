@@ -1,4 +1,4 @@
-package com.workable.movierama.tests;
+package com.workable.movierama;
 
 import java.awt.AWTException;
 import java.util.Random;
@@ -11,21 +11,15 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.workable.movierama.controller.WebController;
-import com.workable.movierama.pages.MainPage;
-import com.workable.movierama.pages.NextPage;
-import com.workable.movierama.pages.PreviousPage;
+import com.workable.movierama.model.pages.MainPage;
 import com.workable.movierama.session.SessionDriver;
 import com.workable.movierama.session.constants.BrowserConstants;
 import com.workable.movierama.session.constants.BrowserType;
-import com.workable.movierama.util.ValidationUtils;
 
 public class MovieRamaTest {
     private static final Logger LOG = LoggerFactory.getLogger(MovieRamaTest.class);
 
     private MainPage mainPage;
-    private NextPage nextPage;
-    private PreviousPage previousPage;
-
     private WebDriver driver;
     private WebController webController;
     private SessionDriver sessionDriver;
@@ -41,8 +35,6 @@ public class MovieRamaTest {
             LOG.error("Error while initializing webDriver.", e);
         }
         mainPage = new MainPage(webController);
-        nextPage = new NextPage(webController);
-        previousPage = new PreviousPage(webController);
         mainPage.returnToMainPage();
     }
 
@@ -54,9 +46,9 @@ public class MovieRamaTest {
         Thread.sleep(BrowserConstants.SLEEP_TIME);
         mainPage.clearSearch();
         Thread.sleep(BrowserConstants.SLEEP_TIME);
-        nextPage.open();
+        mainPage.clickNext();
         Thread.sleep(BrowserConstants.SLEEP_TIME);
-        previousPage.open();
+        mainPage.clickPrevious();
         Thread.sleep(BrowserConstants.SLEEP_TIME);
         mainPage.selectRandomPageNumber();
         Thread.sleep(BrowserConstants.SLEEP_TIME);
