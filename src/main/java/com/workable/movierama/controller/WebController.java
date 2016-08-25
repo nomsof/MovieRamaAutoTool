@@ -27,13 +27,12 @@ public class WebController {
 		driver.get(url);
 	}
 
-	public WebElement waitForElementPresent(Locators locatorType, String locator, long waitTimeInSeconds) {
+	public WebElement waitForElementPresent(Locators locatorType, String locator, long timeOutInSeconds) {
 		try {
-			WebDriverWait ex = new WebDriverWait(driver, waitTimeInSeconds);
-			return ex.until(
+			return new WebDriverWait(driver, timeOutInSeconds).until(
 					ExpectedConditions.presenceOfElementLocated(LocatorController.findByLocator(locatorType, locator)));
 		} catch (TimeoutException e) {
-			throw new ElementNotVisibleException("The element is not visible", e);
+			throw new ElementNotVisibleException("The element is not present", e);
 		}
 	}
 

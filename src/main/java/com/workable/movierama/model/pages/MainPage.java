@@ -30,7 +30,7 @@ public class MainPage {
 
     public MainPage search(String text) {
         WebElement element = webController.waitForElementPresent(Locators.CSS, UILocators.CSS_LOCATOR_SEARCH,
-                BrowserConstants.SLEEP_TIME);
+                BrowserConstants.SLEEP_TIME_IN_SECONDS);
         element.clear();
         element.sendKeys(new CharSequence[] { text });
         element.submit();
@@ -77,7 +77,7 @@ public class MainPage {
 
     public MainPage selectRandomResultsSize() {
         WebElement element = webController.waitForElementPresent(Locators.XPATH, UILocators.XPATH_LOCATOR_SELECT,
-                BrowserConstants.SLEEP_TIME);
+                BrowserConstants.SLEEP_TIME_IN_SECONDS);
         Select select = new Select(element);
         List<WebElement> options = select.getOptions();
         select.selectByIndex((new Random()).nextInt(options.size()));
@@ -86,14 +86,14 @@ public class MainPage {
 
     public int getResultsSizeSelection() {
         WebElement element = webController.waitForElementPresent(Locators.XPATH, UILocators.XPATH_LOCATOR_SELECT,
-                BrowserConstants.SLEEP_TIME);
+                BrowserConstants.SLEEP_TIME_IN_SECONDS);
         Select select = new Select(element);
         return Integer.parseInt(select.getFirstSelectedOption().getText());
     }
 
     public MainPage selectResultsSize(String option) {
         WebElement element = webController.waitForElementPresent(Locators.XPATH, UILocators.XPATH_LOCATOR_SELECT,
-                BrowserConstants.SLEEP_TIME);
+                BrowserConstants.SLEEP_TIME_IN_SECONDS);
         Select select = new Select(element);
         select.selectByVisibleText(option);
         return this;

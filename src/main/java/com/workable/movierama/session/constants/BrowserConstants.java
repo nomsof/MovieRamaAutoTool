@@ -6,4 +6,5 @@ public class BrowserConstants {
 	public static final String DRIVERS_FOLDER = "downloads";
 
 	public static final long SLEEP_TIME = 3000;
+    public static final long SLEEP_TIME_IN_SECONDS = 3;
 }
