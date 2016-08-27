@@ -5,6 +5,8 @@ import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.workable.movierama.controller.WebController;
@@ -16,7 +18,7 @@ import com.workable.movierama.session.constants.BrowserType;
 public class MovieRamaTest extends AbstractMovieRamaTest {
     private static final Logger LOG = LoggerFactory.getLogger(MovieRamaTest.class);
 
-    @Override
+    @BeforeTest
     public void init() {
         sessionDriver = null;
         try {
@@ -60,7 +62,7 @@ public class MovieRamaTest extends AbstractMovieRamaTest {
         return sb.toString();
     }
 
-    @Override
+    @AfterTest
     public void tearDown() {
         try {
             Thread.sleep(BrowserConstants.SLEEP_TIME);

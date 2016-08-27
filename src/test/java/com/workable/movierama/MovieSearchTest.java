@@ -10,6 +10,8 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -26,7 +28,7 @@ public class MovieSearchTest extends AbstractMovieRamaTest {
 
     private static final String SEARCH_WITH_NO_RESULTS = "RESULTS_MUST_NOT_��_FOUND";
 
-    @Override
+    @BeforeTest
     public void init() {
         sessionDriver = null;
         try {
@@ -119,7 +121,7 @@ public class MovieSearchTest extends AbstractMovieRamaTest {
         return true;
     }
 
-    @Override
+    @AfterTest
     public void tearDown() {
         try {
             Thread.sleep(BrowserConstants.SLEEP_TIME);

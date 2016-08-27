@@ -4,6 +4,7 @@ import java.awt.AWTException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -43,7 +44,7 @@ public class MovieElementsTest extends AbstractMovieRamaTest {
         LOG.info("-------------------------------------------------------------------------");
     }
 
-    @Override
+   @AfterTest
     public void tearDown() {
         try {
             Thread.sleep(BrowserConstants.SLEEP_TIME);
