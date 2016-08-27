@@ -1,4 +1,4 @@
-package com.workable.movierama.pages.constants;
+package com.workable.movierama.model.pages.constants;
 
 public class UILocators {
 	// Movie list locators

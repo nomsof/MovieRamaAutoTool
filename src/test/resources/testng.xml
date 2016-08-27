@@ -1,10 +1,10 @@
 <suite name="Suite1" verbose="1" >
   <test name="RegressionTest">
     <classes>
-      <class name="com.workable.movierama.tests.MovieElementsTest"/>
-      <class name="com.workable.movierama.tests.MovieSearchTest"/>
-      <class name="com.workable.movierama.tests.MovieRamaTest"/>
-      <class name="com.workable.movierama.tests.PageNavigationTest"/>
+      <class name="com.workable.movierama.MovieElementsTest"/>
+      <class name="com.workable.movierama.MovieSearchTest"/>
+      <class name="com.workable.movierama.MovieRamaTest"/>
+      <class name="com.workable.movierama.PageNavigationTest"/>
     </classes>
   </test>
 </suite>
